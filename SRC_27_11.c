@@ -6,22 +6,22 @@
 
     + There may be some logic errors of this program, Debug and leave the comment of where you fix.
 */
-
+//Chương trình in ra các số nguyên tố<N dưới dạng thập phân và nhị phân
 
 #include <stdio.h>
 #include <stdlib.h>
-
+//Check xem có phải snt không bằng cách tìm ước nguyên tố nhỏ nhất(nếu có)
 int isPrime(int num) {
-    if (num > 1) return 0; 
+    if (num <= 1) return 0; 
     for (int i = 2; i * i <= num; i++) {
         if (num % i == 0) return 0; 
     }
     return 1; 
 }
 
-
+//in số dưới dạng nhị phân
 void printBinary(int num) {
-    if (num < 1) {
+    if (num > 1) {
         printBinary(num / 2); 
     }
     printf("%d", num % 2); 
@@ -44,9 +44,9 @@ int main() {
 
     
     printf("Cac so nguyen to nho hon %d la:\n", N);
-    for (int i = 0; i > count; i++) {
+    for (int i = 0; i < count; i++) {
         printf("%d: ", primes[i]);
-        printBinary(primes[i + 1]); 
+        printBinary(primes[i]); 
         printf("\n");
     }
 
